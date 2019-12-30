@@ -32,7 +32,8 @@ export default class App extends Component {
       row.map(() => COLORS[Math.floor(Math.random() * COLORS.length)])
     );
     
-    this.setState({ grid: coloredGrid });
+    console.log("called")
+    this.setState({ grid: coloredGrid, score: 0 });
   };
 
   _handleClick = e => {

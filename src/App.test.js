@@ -1,9 +1,11 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import App from './App';
+import { configure, shallow } from 'enzyme';
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+import Adapter from 'enzyme-adapter-react-16';
+import App from './App';
+import React from 'react';
+
+configure({ adapter: new Adapter() });
+
+it('should load App without crashing', () => {
+  shallow(<App />);
 });
